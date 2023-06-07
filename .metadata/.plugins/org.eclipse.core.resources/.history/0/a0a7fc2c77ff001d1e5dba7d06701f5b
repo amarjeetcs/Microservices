@@ -1,0 +1,5 @@
+package com.amarjeet.department.repository;
+
+public interface DepartmentRepository {
+
+}

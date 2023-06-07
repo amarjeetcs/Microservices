@@ -1,0 +1,5 @@
+package com.amarjeet.department.VO;
+
+public class ResponseTemplateVO {
+
+}

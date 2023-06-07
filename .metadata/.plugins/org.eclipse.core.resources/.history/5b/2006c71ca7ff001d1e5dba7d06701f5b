@@ -1,0 +1,5 @@
+package com.amarjeet.user.controller;
+
+public class UserService {
+
+}

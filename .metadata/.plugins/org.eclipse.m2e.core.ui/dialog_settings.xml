@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\USER\Desktop\micro\Springboot-Microservice\cloud-config-server"/>
+			<item value="C:\Users\USER\Desktop\micro\Springboot-Microservice\cloud-gateway"/>
+			<item value="C:\Users\USER\Desktop\micro\Springboot-Microservice\hystrix-dashboard"/>
+			<item value="C:\Users\USER\Desktop\micro\Springboot-Microservice\service-registry"/>
+			<item value="C:\Users\USER\Desktop\micro\Springboot-Microservice\department-service"/>
+			<item value="C:\Users\USER\Desktop\micro\Springboot-Microservice\user-service"/>
+			<item value="C:\Users\USER\Desktop\microservice\Springboot-Microservice\service-registry"/>
+			<item value="C:\Users\USER\Desktop\microservice\Springboot-Microservice\department-service"/>
+			<item value="C:\Users\USER\Desktop\microservice\Springboot-Microservice\user-service"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

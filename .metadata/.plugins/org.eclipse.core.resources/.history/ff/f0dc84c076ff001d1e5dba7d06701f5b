@@ -1,0 +1,9 @@
+package com.amarjeet.department.entity;
+
+public class Department {
+	private long departmentId;
+	private String departmentName;
+	private String departmentAddress;
+	
+
+}

@@ -1,0 +1,5 @@
+package com.amarjeet.user.service;
+
+public class UserService {
+
+}

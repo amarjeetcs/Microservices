@@ -1,0 +1,24 @@
+package com.amarjeet.user.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.amarjeet.user.VO.ResonseTemplateVO;
+import com.amarjeet.user.entity.User;
+import com.amarjeet.user.repository.UserRepository;
+
+@Service
+public class UserService {
+	
+	@Autowired
+	private UserRepository userRepository;
+
+	public User saveUser(User user) {
+		return userRepository.save(user);
+	}
+
+	public ResonseTemplateVO getUserWithDepartment(Long userId) {
+		ResonseTemplateVO vo = new ResonseTemplateVO();
+        User user = userRepository.findByUserId(userId);
+
+}

@@ -1,0 +1,16 @@
+package com.amarjeet.department.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="department_table")
+public class Department {
+	private Long departmentId;
+	private String departmentName;
+	private String departmentAddress;
+	private String departmentCode;
+	
+	
+
+}
