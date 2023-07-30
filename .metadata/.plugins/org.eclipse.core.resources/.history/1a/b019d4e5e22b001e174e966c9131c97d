@@ -1,0 +1,14 @@
+package com.amarjeet.microservice;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeeController {
+
+	@GetMapping("/getEmployee")
+	public String getEmployee()
+	{
+		return "Name: Amarjeet Kumar Singh, Email:amarjeetcs79@gmail.com";
+	}
+}

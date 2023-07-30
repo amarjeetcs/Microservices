@@ -1,0 +1,13 @@
+package com.amarjeet.webservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ServerRegistoryApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ServerRegistoryApplication.class, args);
+	}
+
+}

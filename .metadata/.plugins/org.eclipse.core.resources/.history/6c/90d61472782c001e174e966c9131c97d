@@ -1,0 +1,21 @@
+package com.amarjeet.webservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.amarjeet.webservice.entity.Order;
+import com.amarjeet.webservice.repository.OrderRepository;
+
+@Service
+public class OrderService {
+	
+	@Autowired
+	private OrderRepository repository;
+	
+	public Order saveOrder(Order order)
+	{
+		return repository.save(order);
+	}
+
+	
+}

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: REST-API-PRACTICAL
+
+server:
+  port: 5555
+  

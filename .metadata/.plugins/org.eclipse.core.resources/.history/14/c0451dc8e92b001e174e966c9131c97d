@@ -1,0 +1,5 @@
+package com.amarjeet.microservice.entity;
+
+public class Order {
+
+}

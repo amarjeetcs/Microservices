@@ -1,0 +1,59 @@
+package com.amarjeet.webservice.service;
+
+import java.util.List;
+
+import org.apache.logging.log4j.message.Message;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.amarjeet.webservice.common.Payment;
+import com.amarjeet.webservice.common.TransactionRequest;
+import com.amarjeet.webservice.common.TransactionResponse;
+import com.amarjeet.webservice.entity.Order;
+import com.amarjeet.webservice.repository.OrderRepository;
+
+@Service
+//@RefreshScope
+public class OrderService {
+
+	@Autowired
+	// @Lazy
+	private RestTemplate restTemplate;
+
+	@Autowired
+	private OrderRepository repository;
+
+	/*
+	 * @Value("${microservice.payment-service.endpoints.endpoint.uri}") private
+	 * String CONFIG_URL; //it is used to featch uri from the config server and so
+	 * we need to used annotaion RefreshScope and pass it to insted of hardcoded url
+	 */
+
+	public TransactionResponse saveOrder(TransactionRequest request) {
+		String response = "";
+		Order order = request.getOrder();
+		Payment payment = request.getPayment();
+		payment.setOrderId(order.getId());
+		payment.setAmount(order.getPrice());
+		// rest call
+		Payment paymentResponse = restTemplate.postForObject("http://PAYMENT-SERVICE/payment/doPayment", payment,
+				Payment.class);
+
+		response = paymentResponse.getPaymentStatus().equals("success")
+				? "payment processing successfull and order placed"
+				: "there is a failure in payment api, order added to cart";
+
+		repository.save(order);
+		return new TransactionResponse(order, paymentResponse.getAmount(), paymentResponse.getTransactionId(),
+				response);
+	}
+
+	public List<Order> getOrderDetails() {
+		return repository.findAll();
+	}
+
+}

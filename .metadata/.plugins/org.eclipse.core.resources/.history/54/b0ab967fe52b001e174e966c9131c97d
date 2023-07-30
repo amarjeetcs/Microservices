@@ -1,0 +1,22 @@
+package com.amarjeet.microservice;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class AddressController {
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	@GetMapping("/getAddress")
+	public String getAddress()
+	{
+		String url="http://localhost:8081/getEmployee";
+		String employee= restTemplate.getForObject(url, String.class);
+		return employee+ "Kundahalli Gate Bangalore";
+		
+	}
+
+}

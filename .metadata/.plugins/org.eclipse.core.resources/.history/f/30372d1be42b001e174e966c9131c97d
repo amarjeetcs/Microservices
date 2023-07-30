@@ -1,0 +1,5 @@
+package com.amarjeet.microservice;
+
+public class AddressAppConfig {
+
+}

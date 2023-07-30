@@ -1,0 +1,17 @@
+package com.amarjeet.webservice.Collection;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ArrayListcController {
+	
+	@GetMapping("/getList1")
+	public String getArrayList()
+	{
+		ArrayList al=new ArrayList();
+		
+		return
+	}
+
+}
